@@ -4,7 +4,7 @@
   <artifactId>webstart</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
-  <name>Confinpro | WebStart</name>
+  <name>Cofinpro | WebStart</name>
   <modules>
   	<module>excel-viewer</module>
   	<module>excel-viewer-webstart</module>

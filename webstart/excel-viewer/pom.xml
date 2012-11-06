@@ -3,8 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.cofinpro.wjax2012.webstart</groupId>
 	<artifactId>excel-viewer</artifactId>
-	<version>1.0.0</version>
 	<name>Cofinpro | WebStart | Excel Viewer</name>
+
+	<parent>
+		<groupId>de.cofinpro.wjax2012</groupId>
+		<artifactId>webstart</artifactId>
+		<version>1.0.0</version>
+	    <relativePath>..</relativePath>
+	</parent>
 
 	<dependencies>
 		<dependency>
