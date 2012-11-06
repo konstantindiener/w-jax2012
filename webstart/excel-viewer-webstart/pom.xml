@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.cofinpro.wjax2012.webstart</groupId>
+	<artifactId>excel-viewer-webstart</artifactId>
+	<version>1.0.0</version>
+	<name>Confinpro | WebStart | Excel Viewer WebStart</name>
+	<dependencies>
+		<dependency>
+			<groupId>de.cofinpro.wjax2012.webstart</groupId>
+			<artifactId>excel-viewer</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>webstart-maven-plugin</artifactId>
+				<version>1.0-beta-3</version>
+				<configuration>
+					<libPath>lib</libPath>
+					<jnlp>
+						<inputTemplateResourcePath>${project.basedir}/src/main/jnlp</inputTemplateResourcePath>
+						<inputTemplate>default-jnlp-template.vm</inputTemplate>
+						<outputFile>${project.artifactId}.jnlp</outputFile>
+						<mainClass>de.cofinpro.wjax2012.webstart.ExcelViewerMain</mainClass>
+					</jnlp>
+					<verbose>true</verbose>
+					<sign>
+						<keystore>${project.basedir}/store</keystore>
+						<keypass>cofinpro</keypass>
+						<storepass>cofinpro</storepass>
+						<alias>cofinpro</alias>
+					
+						<dnameCn>cofinpro</dnameCn>
+						<dnameOu>cofinpro</dnameOu>
+						<dnameO>cofinpro</dnameO>
+						<dnameL>cofinpro</dnameL>
+						<dnameSt>cofinpro</dnameSt>
+						<dnameC>cofinpro</dnameC>
+				
+						<verify>true</verify>
+
+						<keystoreConfig>
+							<delete>true</delete>
+							<gen>true</gen>
+						</keystoreConfig>
+					</sign>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
